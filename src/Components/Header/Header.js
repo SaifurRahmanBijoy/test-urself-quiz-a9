@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <nav className="bg-slate-300 flex flex-col md:flex-row justify-around py-2">
+    <nav className="bg-slate-300 flex flex-col md:flex-row justify-around py-2 shadow-lg">
       <div className="flex justify-center">
         <h1 className="text-slate-600 font-mono font-bold text-lg">
           Test Yourself
