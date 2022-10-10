@@ -3,17 +3,17 @@ import React from "react";
 const Topic = ({ topic }) => {
   const { name, logo, total } = topic;
   return (
-    <div className="bg-slate-200 m-2">
+    <div className="bg-slate-200 rounded-md">
       <div>
-        <img className="p-1 w-full" src={logo} alt="" />
+        <img className="p-2 bg-slate-300 w-full" src={logo} alt="" />
       </div>
-      <div>
-        <div>
-            <h1>{name}</h1>
-            <p>Quiz: {total}</p>
+      <div className="flex justify-between mx-2 my-2">
+        <div className="sm:ml-3">
+            <h1 className="sm:text-xl text-slate-600 font-mono">{name}</h1>
+            <p className="font-semibold text-slate-600">Quiz Available: {total}</p>
         </div>
-        <div>
-            <button>Go on</button>
+        <div className="flex items-center sm:mr-3">
+            <button className="bg-blue-600 px-3 py-1 text-slate-300 rounded-sm">Go on</button>
         </div>
       </div>
     </div>

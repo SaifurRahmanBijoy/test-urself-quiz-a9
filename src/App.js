@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import Blog from "./Components/Blog/Blog";
 import Home from "./Components/Home/Home";
 import Stats from "./Components/Stats/Stats";
 import Main from "./layouts/Main";
@@ -21,7 +22,7 @@ function App() {
         },
         {
           path: "/blog",
-          element: <Stats></Stats>,
+          element: <Blog></Blog>,
         },
       ],
     },

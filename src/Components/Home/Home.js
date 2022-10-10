@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <About></About>
-      <div className="grid grid-cols-2 gap-5 mx-auto w-1/3">
+      <div className="grid md:grid-cols-2 gap-5 mx-auto w-1/2">
         {topics.map((topic) => (
           <Topic key={topic.id} topic={topic}></Topic>
         ))}
