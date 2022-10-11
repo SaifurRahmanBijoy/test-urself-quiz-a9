@@ -1,4 +1,6 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Option from "../Option/Option";
 
 const Question = ({ question }) => {
@@ -9,8 +11,33 @@ const Question = ({ question }) => {
   const options = question.options;
   console.log(question);
 
+  const seeIfCorrect = (option) => {
+    if (option === question.correctAnswer) {
+      toast.info("Answer is correct!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
+
   const showAnswer = () => {
-    return (question.correctAnswer);
+    const answer = question.correctAnswer;
+    toast.info(answer, {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
@@ -19,17 +46,45 @@ const Question = ({ question }) => {
         <h2 className="font-mono text-left sm:px-10 text-md bg-slate-50 py-2">
           {questionTitle}
         </h2>
-        <button onClick={showAnswer} className="text-sm text-slate-600 bg-green-300 px-2 rounded-sm shadow-inner">
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+        <button
+          onClick={showAnswer}
+          className="text-sm text-slate-600 bg-green-300 px-2 rounded-sm shadow-inner"
+        >
           See Answer
         </button>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </div>
       <div className="grid grid-cols-1 gap-3 mx-auto px-5 font-serif my-3">
         {options.map((option) => (
-          <Option key={question.id} option={option}></Option>
+          <Option
+            key={question.id}
+            option={option}
+            seeIfCorrect={seeIfCorrect}
+          ></Option>
         ))}
-      </div>
-      <div>
-        <h1>Correct Answer: <span>{showAnswer}</span></h1>
       </div>
     </div>
   );
