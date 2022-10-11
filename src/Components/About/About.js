@@ -10,7 +10,7 @@ const About = () => {
           alt=""
         />
       </div>
-      <div className="text-slate-600 p-3 flex justify-center items-center w-full">
+      <div className="text-slate-600 font-serif p-3 flex justify-center items-center w-full">
         <p>
           A quiz refers to a short test of knowledge, typically around 10
           questions in length, with question formats often including multiple
