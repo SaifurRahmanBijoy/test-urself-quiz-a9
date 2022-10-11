@@ -24,6 +24,18 @@ const Question = ({ question }) => {
         theme: "dark",
       });
     }
+    else{
+      toast.warning("Answer is wrong!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
   };
 
   const showAnswer = () => {
