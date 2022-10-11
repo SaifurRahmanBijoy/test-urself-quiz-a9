@@ -3,7 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div>
-      <div className="bg-slate-200 text-left py-4 px-8 m-5 font-serif shadow-2xl">
+      <div className="bg-slate-200 text-left py-4 px-8 m-5 font-serif shadow-xl border-2 border-gray-300">
         <h2 className="text-2xl mb-2">
           1. What is the purpose of React Router?
         </h2>
@@ -20,7 +20,7 @@ const Blog = () => {
           page while maintaining the correct view of the application.
         </p>
       </div>
-      <div className="bg-slate-200 text-left py-4 px-8 m-5 font-serif shadow-2xl">
+      <div className="bg-slate-200 text-left py-4 px-8 m-5 font-serif shadow-xl border-2 border-gray-300">
         <h2 className="text-2xl mb-2">2. How does Context API Works?</h2>
         <p>
           It returns a consumer and a provider. Provider is a component that as
@@ -34,7 +34,7 @@ const Blog = () => {
           composition is often a simpler solution than context.
         </p>
       </div>
-      <div className="bg-slate-200 text-left py-4 px-8 m-5 font-serif shadow-2xl">
+      <div className="bg-slate-200 text-left py-4 px-8 m-5 font-serif shadow-xl border-2 border-gray-300">
         <h2 className="text-2xl mb-2">
           3. What do you know about useRef Hook in React?
         </h2>

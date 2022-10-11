@@ -39,9 +39,9 @@ const Question = ({ question }) => {
   //--->
   return (
     <form >
-      <div className="bg-slate-200 px-3 py-6 mx-5 my-8">
+      <div className="bg-slate-200 px-3 py-6 mx-6 my-8 border-2 border-gray-300 rounded-sm">
         <div className="flex justify-around flex-col sm:flex-row">
-          <h2 className="font-mono text-left sm:px-10 text-md bg-slate-50 py-2">
+          <h2 className="font-mono text-left px-3 sm:px-10 text-md bg-slate-50 py-2">
             {questionTitle}
           </h2>
           <ToastContainer position="top-center" autoClose={2000} theme="dark" />

@@ -49,7 +49,7 @@ function App() {
     },
   ]);
   return (
-    <div className="">
+    <div className="bg-zinc-100">
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
