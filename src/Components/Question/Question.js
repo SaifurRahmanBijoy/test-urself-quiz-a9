@@ -1,3 +1,5 @@
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +11,6 @@ const Question = ({ question }) => {
   questionTitle = questionTitle.split("</p>").join("");
   //--->
   const options = question.options;
-  console.log(question);
   //--->
   const seeIfCorrect = (option) => {
     if (option === question.correctAnswer) {
@@ -37,30 +38,26 @@ const Question = ({ question }) => {
   };
   //--->
   return (
-    <div className="bg-slate-200 px-3 py-2 mx-5 my-8">
-      <div className="flex justify-around flex-col sm:flex-row">
-        <h2 className="font-mono text-left sm:px-10 text-md bg-slate-50 py-2">
-          {questionTitle}
-        </h2>
-        <ToastContainer position="top-center" autoClose={2000} theme="dark" />
-        <button
-          onClick={showAnswer}
-          className="text-sm text-slate-600 bg-green-300 hover:bg-orange-500 hover:text-slate-300 px-2 rounded-sm shadow-inner"
-        >
-          See Answer
-        </button>
-        <ToastContainer position="top-center" autoClose={2000} theme="dark" />
+    <form >
+      <div className="bg-slate-200 px-3 py-6 mx-5 my-8">
+        <div className="flex justify-around flex-col sm:flex-row">
+          <h2 className="font-mono text-left sm:px-10 text-md bg-slate-50 py-2">
+            {questionTitle}
+          </h2>
+          <ToastContainer position="top-center" autoClose={2000} theme="dark" />
+          <FontAwesomeIcon onClick={showAnswer} className="hover:cursor-pointer flex items-center text-sm text-green-800 hover:text-green-400 my-2 rounded-sm" icon={faEye}></FontAwesomeIcon>
+        </div>
+        <div className="grid grid-cols-1 gap-3 mx-auto px-5 font-serif my-3">
+          {options.map((option) => (
+            <Option
+              key={option}
+              option={option}
+              seeIfCorrect={seeIfCorrect}
+            ></Option>
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 gap-3 mx-auto px-5 font-serif my-3">
-        {options.map((option) => (
-          <Option
-            key={question.id}
-            option={option}
-            seeIfCorrect={seeIfCorrect}
-          ></Option>
-        ))}
-      </div>
-    </div>
+    </form>
   );
 };
 
